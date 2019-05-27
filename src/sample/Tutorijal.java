@@ -15,9 +15,12 @@ public class Tutorijal {
             FileReader fileReader = new FileReader("mjerenja");
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
-            while (line == bufferedReader){
+            while (line == bufferedReader.readLine()) != null{
+                gradovi.add(line);
 
             }
+            catch (IDException);
+
         }
     }
 }
