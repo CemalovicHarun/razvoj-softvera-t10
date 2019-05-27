@@ -1,9 +1,13 @@
 package sample;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class UN {
-    private ArrayList<Drzava> drzave;
+public class UN implements Serializable {
+    private ArrayList<Drzava> drzave=new ArrayList<>();
+
+    public UN() {
+    }
 
     public ArrayList<Drzava> getDrzave() {
         return drzave;
@@ -11,5 +15,12 @@ public class UN {
 
     public void setDrzave(ArrayList<Drzava> drzave) {
         this.drzave = drzave;
+    }
+
+    @Override
+    public String toString() {
+        return "UN{" +
+                "drzave=" + drzave +
+                '}';
     }
 }

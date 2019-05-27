@@ -3,19 +3,29 @@ package sample;
 import java.io.Serializable;
 
 public class Drzava implements Serializable {
-
-        private String DrzavaNaziv;
+        private String naziv;
         private int brojStanovnika;
         private double povrsina;
-        private String jedinicaZaPovrsinu;
-        private Grad GlavniGrad;
+        private String jedinicaPovrsine;
+        private Grad glavniGrad;
 
-        public String getDrzavaNaziv() {
-                return DrzavaNaziv;
+        public Drzava() {
         }
 
-        public void setDrzavaNaziv(String drzavaNaziv) {
-                DrzavaNaziv = drzavaNaziv;
+        public Drzava(String naziv, int stanovnika, double povrsina, String jedinica, Grad glavniGrad) {
+                this.naziv=naziv;
+                this.brojStanovnika=stanovnika;
+                this.jedinicaPovrsine=jedinica;
+                this.glavniGrad= glavniGrad;
+                this.povrsina=povrsina;
+        }
+
+        public String getNaziv() {
+                return naziv;
+        }
+
+        public void setNaziv(String naziv) {
+                this.naziv = naziv;
         }
 
         public int getBrojStanovnika() {
@@ -34,19 +44,30 @@ public class Drzava implements Serializable {
                 this.povrsina = povrsina;
         }
 
-        public String getJedinicaZaPovrsinu() {
-                return jedinicaZaPovrsinu;
+        public String getJedinicaPovrsine() {
+                return jedinicaPovrsine;
         }
 
-        public void setJedinicaZaPovrsinu(String jedinicaZaPovrsinu) {
-                this.jedinicaZaPovrsinu = jedinicaZaPovrsinu;
+        public void setJedinicaPovrsine(String jedinicaPovrsine) {
+                this.jedinicaPovrsine = jedinicaPovrsine;
         }
 
         public Grad getGlavniGrad() {
-                return GlavniGrad;
+                return glavniGrad;
         }
 
         public void setGlavniGrad(Grad glavniGrad) {
-                GlavniGrad = glavniGrad;
+                this.glavniGrad = glavniGrad;
+        }
+
+        @Override
+        public String toString() {
+                return "Drzava{" +
+                        "naziv='" + naziv + '\'' +
+                        ", brojStanovnika=" + brojStanovnika +
+                        ", povrsina=" + povrsina +
+                        ", jedinicaPovrsine='" + jedinicaPovrsine + '\'' +
+                        ", glavniGrad=" + glavniGrad +
+                        '}';
         }
 }
